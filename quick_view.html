@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick View Modal</title>
+  <link rel="stylesheet" href="quick_view.css" />
+</head>
+<body>
+  <div class="product">
+    
+    <h2>Sample Product</h2>
+    <button id="quickViewBtn" aria-haspopup="dialog" aria-controls="quickViewModal">Quick View</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="quickViewModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-left">
+        <img id="modalProductImage" src="IMG-20250328-WA0007.jpg" alt="Product Image" />
+      </div>
+      <div class="modal-right">
+        <h2 id="modalProductName">Sample Product</h2>
+        <p id="modalProductPrice">$20</p>
+
+        <div class="sizes">
+          <p>Select Size:</p>
+          <div class="size-options">
+            <button class="size-btn active" data-price="20" data-image="IMG-20250328-WA0007.jpg">50 ML</button>
+            <button class="size-btn" data-price="25" data-image="IMG-20250331-WA0003.jpg">1 L</button>
+            <button class="size-btn" data-price="30" data-image="img/l.jpg">5L</button>
+            <button class="size-btn" data-price="35" data-image="img/xl.jpg">20L</button>
+          </div>
+          
+        </div>
+
+        <div class="quantity">
+          <p>Quantity:</p>
+          <button id="decreaseQty">-</button>
+          <input type="number" id="quantityInput" value="1" min="1" />
+          <button id="increaseQty">+</button>
+        </div>
+
+        <div class="modal-buttons">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="quick_view.js"></script>
+</body>
+</html>
